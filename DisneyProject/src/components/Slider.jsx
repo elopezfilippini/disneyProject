@@ -22,9 +22,8 @@ function Slider() {
 
 
     return (
-        <div className='p-5'>
-            <HiChevronLeft onClick={()=>sliderLeft(elementRef.current)} className="hidden md:block text-white text-[30px] absolute mx-8 mt-[150px]  cursor-pointer"/>
-            <HiChevronRight onClick={()=>sliderRight(elementRef.current)} className="hidden md:block text-white text-[30px] absolute mx-4 mt-[150px] right-20 cursor-pointer"/>
+        <div className='relative'>
+            <HiChevronLeft onClick={()=>sliderLeft(elementRef.current)} className="hidden md:block text-white text-[30px] absolute mx-0 mt-[150px]  cursor-pointer"/>
         
         <div className="flex overflow-x-auto min-w-full px-4 py-4 mr-5 scrollbar-none scroll-smooth " ref={elementRef}>
 {movieList.map((item,index)=>(
@@ -37,6 +36,9 @@ className="min-w-full md:h-[310px] object-cover object-top rounded-md mr-5 ml-0 
 
 
     </div>
+
+    <HiChevronRight onClick={()=>sliderRight(elementRef.current)} className="hidden md:block text-white text-[30px] top-0 absolute z-10 mt-[150px]  right-[0] cursor-pointer"/>
+
      </div>
   )
 }
